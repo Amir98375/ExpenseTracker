@@ -30,13 +30,14 @@ const Assignemnt = () => {
   const [id,setId]=useState(null)
 
   const [expenseAmountList, setExpenseAmountList] = useState([]);
+
+//expense and list later can be dynamic from database
+  const [expenseList, setExpenseList] = useState(["Grocery", "Rent", "Bill"]);
   const [incomeList, setIncomeList] = useState([
     "Salary",
     "Freelance",
     "Extra Works",
   ]);
-
-  const [expenseList, setExpenseList] = useState(["Grocery", "Rent", "Bill"]);
 
   const dispatch = useDispatch();
 
@@ -46,19 +47,22 @@ const Assignemnt = () => {
   const [expenseAmount, setExpenseAmount] = useState(0);
   const [modify,setModify]=useState(false)
 
+  //expense tracker data later can be dynamic 
   const [formData, setFormData] = useState({
     amount: 0,
     type: "",
     category: "",
     date: "",
   });
-
+//to Open Modal
   const handleOpen = () => {
     setModify(false)
     setFormData({ amount: 0, type: "", category: "", date: "" });
     setId(null)
     setshowModel(true);
   };
+
+  //function to calculate monthly expenses according to date
   const calculateMonthlyExpenses = (arr) => {
     debugger;
     const monthlyExpenses = {};
@@ -89,6 +93,7 @@ const Assignemnt = () => {
     setchartDate(months);
     setchartAmount(totalExpenses);
   };
+  // function to submit data in redux
   const handleSubmit = (values) => {
     debugger;
     if (
@@ -124,12 +129,13 @@ const Assignemnt = () => {
     }
   };
 
+  //function to delete data from redux
   const handleDelete = (e, rowData) => {
     debugger;
     let index = rowData.tableData.id;
     dispatch(DeleteTransaction(index));
   };
-
+//function to Modify data from redux open modal
   const handleModify=(e,rowData)=>{
 setModify(true)
       setId(rowData.tableData.id)
@@ -142,6 +148,8 @@ setModify(true)
     })
     setshowModel(true)
   }
+
+ //function to Modify data 
   const handleModifyFun=()=>{
     debugger
 
@@ -158,7 +166,7 @@ setModify(true)
       setshowModel(false)
     }
   }
-
+//useEffect work on data dependency whenever it will changes
   useEffect(() => {
     console.log(data, "data");
     if (data) {
@@ -188,6 +196,9 @@ setModify(true)
     }
   }, [data]);
 
+
+  //card component we are passing props after calculating amount
+    //chart js component after making a list of months and amount pasing as props
   return (
     <>
       <div className="App">
