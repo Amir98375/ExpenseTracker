@@ -24,10 +24,3 @@ export const ModifyTransaction=(payload)=>{
       payload
     }
 }
-export const ClearAll=(payload)=>{
-  debugger
-    return{
-      type:clearAllTransation,
-      payload
-    }
-}
