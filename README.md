@@ -1,6 +1,6 @@
 <h2>Expense Tracker</h2>
 <h2>Deploye Link</h2>
-[Live Demo](https://master--papaya-parfait-cb6c84.netlify.app/){:target="_blank"}
+[Live Demo](https://master--papaya-parfait-cb6c84.netlify.app/)
 <h3>Everything Handled by redux</h3>
 <img src="https://raw.githubusercontent.com/Amir98375/imagesproject/master/Screenshot%20(43).png"/>
 <h3> On clicking of transaction Button there is a modal where you can add the details</h3>
