@@ -212,7 +212,7 @@ setModify(true)
             <MemoisedCard income={incomeAmount} expense={expenseAmount} />
           </div>
         </div>
-        <h2>Expense Chart</h2>
+        <h3>Expense Chart</h3>
         <div
           style={{
             display: "flex",
