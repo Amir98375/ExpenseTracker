@@ -9,7 +9,8 @@
 <h3> For Income Category Type Is Diffrent and fro Expense category type is diffrent </h3>
 
 <h3> To submit the details click to submit button </h3>
-
+<h3>If You have Not submit all details you will get a POPUP to enter all details</h3>
+<img src="https://raw.githubusercontent.com/Amir98375/imagesproject/master/Screenshot%20(45).png"/>
 <img src="https://raw.githubusercontent.com/Amir98375/imagesproject/master/Screenshot%20(44).png"/>
 
 
