@@ -22,7 +22,13 @@ import {
 import { MemoisedCard } from "./Card";
 import Swal from "sweetalert2";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 const Assignemnt = () => {
+  const notify = () => toast("Wow so easy!");
   const [showModel, setshowModel] = useState(false);
   const [ListType, setListType] = useState(["income", "expense"]);
   const [chartDate, setchartDate] = useState([]);
@@ -112,20 +118,13 @@ const Assignemnt = () => {
           backdrop: "swal-backdrop",
           confirmButton: "swal-confirm-button",
         },
-        onOpen: () => {
-          // Get the SweetAlert popup element and set its z-index
-          const swalPopup = document.querySelector(".swal-popup");
-          if (swalPopup) {
-            swalPopup.style.zIndex = 10000; // Set your desired z-index value here
-          }
-        },
+        position: "center",
       });
     } else {
       dispatch(AddTransaction(formData));
       settableData(data);
       setFormData({ amount: 0, type: "", category: "", date: "" });
-
-      // Close the modal after submission
+      setshowModel(false); // Close the modal after submission
     }
   };
 
@@ -231,6 +230,7 @@ setModify(true)
           }}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
+          style={{ zIndex: 100 }} // Set a high z-index for the dialog
         >
           <DialogContent>
             <div>
@@ -393,6 +393,7 @@ setModify(true)
           data={tableData}
         />
       </div>
+      <ToastContainer/>
     </>
   );
 };
